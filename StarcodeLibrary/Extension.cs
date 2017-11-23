@@ -125,7 +125,6 @@ namespace StarcodeLibrary
             {
                 output = "0";
             }
-            //debug(out);
             return output;
         }
 
@@ -148,7 +147,7 @@ namespace StarcodeLibrary
             {
             }
             output = Cut(output);
-            //debug(out);
+
             return output;
         }
 
@@ -165,7 +164,7 @@ namespace StarcodeLibrary
                 carry = c % d;
                 i += 1;
             }
-            //debug(IntToString(carry));
+
             return Convert.ToString(carry);
         }
 
@@ -255,6 +254,7 @@ namespace StarcodeLibrary
             while (i <= l)
             {
                 output = BigNumberAddition(output, BigNumberMultiply(BigNumberPower(n, l - i), Convert.ToString(Ordinal(current.Substring(i, i)))));
+                i += 1;
             }
             return output;
         }
