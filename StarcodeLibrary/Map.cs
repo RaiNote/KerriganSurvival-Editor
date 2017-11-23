@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace StarcodeLibrary
+﻿namespace StarcodeLibrary
 {
     public abstract class Map : Extension
     {
@@ -35,5 +29,17 @@ namespace StarcodeLibrary
         public string EncryptString(string lptoEncrypt, string lpkey) => Encrypt(lptoEncrypt, lpkey);
 
         public string CompressString(string lptoCompress) => Base10ToN(lptoCompress, Alphabet.Length);
+
+        public string HashString(string lptoHash, int lpSecurityLevel) => Hash(lptoHash, lpSecurityLevel) + lptoHash;
+
+        public string RemoveHashfromString(string lpstring, int lpSecurityLevel) =>
+            lpstring.Substring(lpSecurityLevel + 1, lpstring.Length);
+
+        public bool ValidateString(string lptoCheck, int lpSecurityLevel) =>
+            Hash(lptoCheck.Substring(lpSecurityLevel + 1, lptoCheck.Length), lpSecurityLevel) == lptoCheck.Substring(1, lpSecurityLevel);
+
+        public string DecryptString(string lptoDecrypt, string lpkey) => Decrypt(lptoDecrypt, lpkey);
+
+        public string DecompressString(string lptoDecompress) => BaseNTo10(lptoDecompress, Alphabet.Length);
     }
 }
