@@ -78,5 +78,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StarcodeLibrary\StarcodeLibrary.csproj">
+      <Project>{2ab85cd7-99e6-46da-b8d1-032517003258}</Project>
+      <Name>StarcodeLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

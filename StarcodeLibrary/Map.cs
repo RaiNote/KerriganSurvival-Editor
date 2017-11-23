@@ -2,7 +2,11 @@
 {
     public abstract class Map : Extension
     {
-        private void StoreIntegerValue(int lpvalue, int lpmaximumValue)
+        public string Key = "";
+
+        public void SetKey(string newKey) => Key = newKey;
+
+        public void StoreIntegerValue(int lpvalue, int lpmaximumValue)
         {
             if (lpvalue < lpmaximumValue + 1)
                 CurrentCode = Encode(CurrentCode, lpvalue, lpmaximumValue + 1);
